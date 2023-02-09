@@ -5,7 +5,7 @@ type Props = {};
 
 const ComponentPageLayout = (props: Props) => {
   return (
-    <><Outlet /></>
+    <><Outlet /><div>jnbmmnbm</div></>
   );
 };
 

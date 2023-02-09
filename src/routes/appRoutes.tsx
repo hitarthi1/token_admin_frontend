@@ -17,16 +17,24 @@ import ButtonPage from "../pages/component/ButtonPage";
 import InstallationPage from "../pages/installation/InstallationPage";
 import DocumentationPage from "../pages/documentation/DocumentationPage";
 
+
+
+
+
+
 const appRoutes: RouteType[] = [
   {
     index: true,
     element: <HomePage />,
+    windo_no: 0,
+
     state: "home"
   },
   {
     path: "/installation",
     element: <InstallationPage />,
     state: "installation",
+    windo_no: 0,
     sidebarProps: {
       displayText: "Installation",
       icon: <FileDownloadOutlinedIcon />
@@ -36,6 +44,7 @@ const appRoutes: RouteType[] = [
     path: "/dashboard",
     element: <DashboardPageLayout />,
     state: "dashboard",
+    windo_no: 0,
     sidebarProps: {
       displayText: "Dashboard",
       icon: <DashboardOutlinedIcon />
@@ -44,12 +53,14 @@ const appRoutes: RouteType[] = [
       {
         index: true,
         element: <DashboardIndex />,
+        windo_no: 0,
         state: "dashboard.index"
       },
       {
-        path: "/dashboard/default",
-        element: <DefaultPage />,
+        path: "/dashboard/default/:ip",
+        element: <DefaultPage size={6700000}/>,
         state: "dashboard.default",
+        windo_no: 0,
         sidebarProps: {
           displayText: "Default"
         },
@@ -58,6 +69,7 @@ const appRoutes: RouteType[] = [
         path: "/dashboard/analytics",
         element: <AnalyticsPage />,
         state: "dashboard.analytics",
+        windo_no: 0,
         sidebarProps: {
           displayText: "Analytic"
         }
@@ -66,43 +78,47 @@ const appRoutes: RouteType[] = [
         path: "/dashboard/saas",
         element: <SaasPage />,
         state: "dashboard.saas",
+        windo_no: 0,
         sidebarProps: {
           displayText: "Saas"
         }
       }
     ]
   },
-  {
-    path: "/component",
-    element: <ComponentPageLayout />,
-    state: "component",
-    sidebarProps: {
-      displayText: "Components",
-      icon: <AppsOutlinedIcon />
-    },
-    child: [
-      {
-        path: "/component/alert",
-        element: <AlertPage />,
-        state: "component.alert",
-        sidebarProps: {
-          displayText: "Alert"
-        },
-      },
-      {
-        path: "/component/button",
-        element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "Button"
-        }
-      }
-    ]
-  },
+  // {
+  //   path: "/component",
+  //   element: <ComponentPageLayout />,
+  //   state: "component",
+  //   sidebarProps: {
+  //     displayText: "Components",
+  //     icon: <AppsOutlinedIcon />
+  //   },
+  //   child: [
+  //     {
+  //       path: "/component/alert",
+  //       element: <AlertPage />,
+  //       windo_no: 0,
+  //       state: "component.alert",
+  //       sidebarProps: {
+  //         displayText: "Alert"
+  //       },
+  //     },
+  //     {
+  //       path: "/component/button",
+  //       element: <ButtonPage />,
+  //       windo_no: 0,
+  //       state: "component.button",
+  //       sidebarProps: {
+  //         displayText: "Button"
+  //       }
+  //     }
+  //   ]
+  // },
   {
     path: "/documentation",
     element: <DocumentationPage />,
     state: "documentation",
+    windo_no: 0,
     sidebarProps: {
       displayText: "Documentation",
       icon: <ArticleOutlinedIcon />
@@ -112,6 +128,7 @@ const appRoutes: RouteType[] = [
     path: "/changelog",
     element: <ChangelogPage />,
     state: "changelog",
+    windo_no: 0,
     sidebarProps: {
       displayText: "Changelog",
       icon: <FormatListBulletedOutlinedIcon />
